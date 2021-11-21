@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ToDoSync</string>
+    <string name="title_todo">ToDoList</string>
+    <string name="title_labels">Labels</string>
+</resources>
