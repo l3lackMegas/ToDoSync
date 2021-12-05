@@ -16,4 +16,13 @@
         <item name="android:windowNoTitle">true</item>
         <item name="android:navigationBarColor">?attr/colorPrimaryVariant</item>
     </style>
+
+    <style name="Theme.ToDoSync.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.ToDoSync.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.ToDoSync.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
