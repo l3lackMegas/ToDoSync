@@ -1,12 +1,16 @@
 package com.example.todosync;
 
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.view.animation.ScaleAnimation;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
@@ -48,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         ImageButton btnUser = findViewById(R.id.btnUser);
         //mBottomSheetDialog.getWindow().setWindowAnimations(R.style.MaterialDialogSheet);
 
+
         btnUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,10 +79,33 @@ public class MainActivity extends AppCompatActivity {
             mBottomSheetDialog.getWindow().setStatusBarColor(Color.TRANSPARENT);
         }
         mBottomSheetDialog.show();
+
+        mBottomSheetDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialog) {
+                hideSlideUp(btn);
+            }
+        });
+
+        containerFocus(true);
     }
 
     public void hideSlideUp(View btn) {
-        mBottomSheetDialog.hide();
+        mBottomSheetDialog.dismiss();
+        containerFocus(false);
+    }
+
+    private void containerFocus(boolean isFocus) {
+        View container = (View) findViewById(R.id.container);
+        Animation anim_container;
+        if(isFocus == true) {
+            anim_container = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.layout_scale_out);
+        } else {
+            anim_container = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.layout_scale_in);
+        }
+        anim_container.setDuration(200);
+        anim_container.setFillAfter(true);
+        container.startAnimation(anim_container);
     }
 
 }
