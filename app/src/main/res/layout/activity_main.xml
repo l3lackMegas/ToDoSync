@@ -79,7 +79,7 @@
             app:menu="@menu/bottom_nav_menu" >
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/floatingActionButton"
+                android:id="@+id/btn_add"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:clickable="true"
@@ -90,6 +90,7 @@
                 app:backgroundTint="@color/black"
                 app:rippleColor="@color/white"
                 android:scaleType="fitCenter"
+                android:onClick="showSlideUp"
                 android:layout_gravity="center"/>
         </com.google.android.material.bottomnavigation.BottomNavigationView>
 

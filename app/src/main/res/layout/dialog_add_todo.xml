@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="bottom"
+    android:gravity="bottom"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:onClick="hideSlideUp"
+    />
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="500px"
+        android:layout_gravity="bottom"
+        android:gravity="bottom"
+        android:layout_alignParentBottom="true"
+        android:fitsSystemWindows="true"
+        android:background="@color/white">
+    </RelativeLayout>
+</RelativeLayout>
