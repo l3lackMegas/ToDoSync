@@ -35,7 +35,7 @@
                 android:scaleType="fitCenter"
                 app:maxImageSize="36dp"
                 android:focusable="true"
-                android:background="@color/white"
+                android:background="@drawable/btn_selector"
                 app:tint="@color/black"
                 tools:layout_editor_absoluteX="4dp" />
 
