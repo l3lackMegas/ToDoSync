@@ -118,6 +118,7 @@
         app:headerLayout="@layout/nav_header_main_manu"
         app:menu="@menu/activity_main_drawer">
         <Button
+            android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
