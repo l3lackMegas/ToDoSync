@@ -12,7 +12,7 @@
         android:enabled="false"/>
 
     <item
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_label"
         android:icon="@drawable/ic_baseline_label_24"
         android:title="@string/title_labels"/>
 

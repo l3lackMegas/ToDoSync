@@ -12,8 +12,8 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.todosync.ui.notifications.NotificationsFragment"
+        android:id="@+id/navigation_label"
+        android:name="com.example.todosync.ui.label.LabelFragment"
         android:label="@string/title_labels"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_label" />
 </navigation>

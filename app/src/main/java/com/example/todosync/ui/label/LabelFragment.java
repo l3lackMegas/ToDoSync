@@ -1,4 +1,4 @@
-package com.example.todosync.ui.notifications;
+package com.example.todosync.ui.label;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,24 +13,23 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.todosync.MainActivity;
-import com.example.todosync.R;
-import com.example.todosync.databinding.FragmentNotificationsBinding;
+import com.example.todosync.databinding.FragmentLabelBinding;
 
-public class NotificationsFragment extends Fragment {
+public class LabelFragment extends Fragment {
 
-    private NotificationsViewModel notificationsViewModel;
-    private FragmentNotificationsBinding binding;
+    private LabelViewModel labelViewModel;
+    private FragmentLabelBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        notificationsViewModel =
-                new ViewModelProvider(this).get(NotificationsViewModel.class);
+        labelViewModel =
+                new ViewModelProvider(this).get(LabelViewModel.class);
 
-        binding = FragmentNotificationsBinding.inflate(inflater, container, false);
+        binding = FragmentLabelBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textNotifications;
-        notificationsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        final TextView textView = binding.textLabel;
+        labelViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

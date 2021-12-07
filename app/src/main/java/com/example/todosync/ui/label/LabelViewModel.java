@@ -1,4 +1,4 @@
-package com.example.todosync.ui.notifications;
+package com.example.todosync.ui.label;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -6,13 +6,13 @@ import androidx.lifecycle.ViewModel;
 
 import com.example.todosync.MainActivity;
 
-public class NotificationsViewModel extends ViewModel {
+public class LabelViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public NotificationsViewModel() {
+    public LabelViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is notifications fragment");
+        mText.setValue("This is label fragment");
         MainActivity.current_page = 1;
     }
 
