@@ -85,7 +85,7 @@
                 android:layout_gravity="center"
                 android:clickable="true"
                 android:focusable="true"
-                android:onClick="showSlideUp"
+                android:onClick="showDialog"
                 android:scaleType="fitCenter"
                 app:backgroundTint="@color/black"
                 app:maxImageSize="36dp"

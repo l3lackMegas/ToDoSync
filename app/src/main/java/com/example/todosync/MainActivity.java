@@ -1,21 +1,31 @@
 package com.example.todosync;
 
+import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.ScaleAnimation;
+import android.widget.ArrayAdapter;
+import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.view.GravityCompat;
@@ -26,10 +36,19 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.todosync.databinding.ActivityMainBinding;
+import com.google.android.material.navigation.NavigationBarView;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
+import eltos.simpledialogfragment.SimpleDialog;
+import eltos.simpledialogfragment.color.SimpleColorDialog;
+import eltos.simpledialogfragment.color.SimpleColorWheelDialog;
 
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
+    AppBarConfiguration appBarConfiguration;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,9 +59,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
+
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
+        appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
@@ -67,10 +87,74 @@ public class MainActivity extends AppCompatActivity {
         drawer.openDrawer(GravityCompat.START);
     }
 
+    public static int current_page = 0;
+
+    public static void setCurrentPage(int page) {
+        current_page = page;
+    }
+
+    public void showDialog(View btn) {
+        if(current_page == 1) {
+            showSlideUp(btn, R.layout.dialog_add_label);
+        } else {
+            showSlideUp(btn, R.layout.dialog_add_todo);
+            createAddToDoDialog();
+        }
+    }
+
+    private void createAddToDoDialog() {
+        // Create Selector
+        String[] todoLabels = {"Work", "Study", "Hobby"};
+        Spinner label_selector = (Spinner)mBottomSheetDialog.findViewById(R.id.label_selector);
+
+        ArrayAdapter<String> labelSelectorAdapter = new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_spinner_item, todoLabels);
+        labelSelectorAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        label_selector.setAdapter(labelSelectorAdapter);
+
+        // Create Date Picker
+        final Calendar c = Calendar.getInstance();
+        final int[] mYear = {c.get(Calendar.YEAR)};
+        final int[] mMonth = {c.get(Calendar.MONTH)};
+        final int[] mDay = {c.get(Calendar.DAY_OF_MONTH)};
+
+        TextView AddDatePicker = (TextView)mBottomSheetDialog.findViewById(R.id.todoAddDate);
+        AddDatePicker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                DatePickerDialog dpd = new DatePickerDialog(MainActivity.this,
+                        new DatePickerDialog.OnDateSetListener() {
+                            @Override
+                            public void onDateSet(DatePicker view, int year, int month, int day) {
+                                c.set(year, month, day);
+                                String date = new SimpleDateFormat("MM/dd/yyyy").format(c.getTime());
+                                AddDatePicker.setText(date);
+
+                                mYear[0] = c.get(Calendar.YEAR);
+                                mMonth[0] = c.get(Calendar.MONTH);
+                                mDay[0] = c.get(Calendar.DAY_OF_MONTH);
+                            }
+                        }, mYear[0], mMonth[0], mDay[0]);
+                dpd.getDatePicker().setMinDate(System.currentTimeMillis());
+
+                Calendar d = Calendar.getInstance();
+                d.add(Calendar.MONTH,1);
+
+                dpd.getDatePicker().setMaxDate(d.getTimeInMillis());
+                dpd.show();
+
+
+            }
+
+        });
+    }
+
     public Dialog mBottomSheetDialog;
-    public void showSlideUp(View btn) {
+    public void showSlideUp(View btn, int target_layout) {
         mBottomSheetDialog = new Dialog(this, R.style.MaterialDialogSheet);
-        mBottomSheetDialog.setContentView(R.layout.dialog_add_todo); // your custom view.
+        mBottomSheetDialog.setContentView(target_layout); // your custom view.
+
+
         //mBottomSheetDialog.getWindow().setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         mBottomSheetDialog.getWindow().setGravity(Gravity.BOTTOM);
         mBottomSheetDialog.setCancelable(true);
@@ -78,7 +162,6 @@ public class MainActivity extends AppCompatActivity {
             mBottomSheetDialog.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             mBottomSheetDialog.getWindow().setStatusBarColor(Color.TRANSPARENT);
         }
-        mBottomSheetDialog.show();
 
         mBottomSheetDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
             @Override
@@ -87,6 +170,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         containerFocus(true);
+
+        mBottomSheetDialog.show();
     }
 
     public void hideSlideUp(View btn) {
@@ -107,4 +192,14 @@ public class MainActivity extends AppCompatActivity {
         container.startAnimation(anim_container);
     }
 
+    private static final String COLOR_DIALOG = "dialogTagColor";
+
+    public void showColorPicker(View view) {
+        SimpleColorDialog.build()
+            .title("Pick a color")
+            .allowCustom(true)
+            .colorPreset(0xff009688)
+            .show(this, COLOR_DIALOG);
+
+    }
 }

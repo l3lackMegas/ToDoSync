@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:onClick="hideSlideUp"
-        android:layout_weight="2"
+        android:layout_weight="6"
     />
     <RelativeLayout
         android:layout_width="match_parent"
@@ -30,7 +30,7 @@
                 android:textStyle="bold"
                 android:textSize="25dp"
                 android:textColor="@color/black"
-                android:text="Add ToDo" />
+                android:text="Add Label" />
             <LinearLayout
                 android:id="@+id/header_view"
                 android:layout_width="wrap_content"
@@ -89,80 +89,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="Date"
+                android:text="Priority Color"
                 android:textColor="@color/black" />
-
             <TextView
-                android:id="@+id/todoAddDate"
+                android:id="@+id/labelSetColor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#EAEAEA"
                 android:ems="10"
                 android:inputType="date"
                 android:padding="10dp"
+                android:onClick="showColorPicker"
                 android:textColor="@color/black" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="Label"
-                android:textColor="@color/black" />
-
-            <Spinner
-                android:id="@+id/label_selector"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#EAEAEA"
-                android:paddingVertical="10dp"
-                android:textColor="@color/black" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="Priority Color"
-                android:textColor="@color/black" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <LinearLayout
-                    android:layout_marginTop="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <ImageView
-                        android:layout_marginRight="15dp"
-                        android:layout_width="100dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/color_selected"/>
-                    <ImageView
-                        android:layout_marginRight="15dp"
-                        android:layout_width="100dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/color_selector"
-                        android:backgroundTint="#FFBC6D" />
-                    <ImageView
-                        android:layout_marginRight="15dp"
-                        android:layout_width="100dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/color_selector"
-                        android:backgroundTint="#6BF468" />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_marginTop="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <ImageView
-                        android:layout_marginRight="15dp"
-                        android:layout_width="100dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/color_selector"
-                        android:backgroundTint="#ACACAC"/>
-                </LinearLayout>
-            </LinearLayout>
-
         </LinearLayout>
     </RelativeLayout>
 </LinearLayout>
