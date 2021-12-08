@@ -342,4 +342,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
         overridePendingTransition(R.anim.slideup, R.anim.fadeout);
     }
+
+    public void addToDo(View v) {
+        Toast.makeText(MainActivity.this, (String) "Add " + ((EditText) mBottomSheetDialog.findViewById(R.id.editTextToDoTitle)).getText().toString() + " to your list!", Toast.LENGTH_SHORT).show();
+        hideSlideUp(v);
+    }
 }

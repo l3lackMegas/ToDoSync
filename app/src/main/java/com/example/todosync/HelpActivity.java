@@ -39,6 +39,7 @@ public class HelpActivity extends AppCompatActivity {
         videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
+                mp.setLooping(true);
                 progressDialog.dismiss();
                 videoView.requestFocus();
 
@@ -65,6 +66,14 @@ public class HelpActivity extends AppCompatActivity {
         videoViewEmbed.setVideoURI(embedUri);
         videoViewEmbed.requestFocus();
         videoViewEmbed.start();
+
+        videoViewEmbed.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                mp.setLooping(true);
+
+            }
+        });
     }
 
     public void closeHelp(View v) {
