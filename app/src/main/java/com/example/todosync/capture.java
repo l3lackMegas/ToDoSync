@@ -59,8 +59,7 @@ public class capture<onRequestPermissionResult> extends AppCompatActivity {
         backToManage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent back = new Intent(capture.this, ManageUserActivity.class);
-                startActivity(back);
+                finish();
             }
         });
     }
@@ -95,7 +94,7 @@ public class capture<onRequestPermissionResult> extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == RESULT_OK) {
+        if (resultCode == RESULT_OK) {
             mImageView.setImageURI(image_uri);
         }
     }
