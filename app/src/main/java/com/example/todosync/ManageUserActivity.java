@@ -23,6 +23,15 @@ public class ManageUserActivity extends AppCompatActivity {
                 startActivity(captureScreen);
             }
         });
+
+        TextView userLocate = findViewById(R.id.userLocationBtn);
+        userLocate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent locateScreen = new Intent(ManageUserActivity.this, MapsActivity.class);
+                startActivity(locateScreen);
+            }
+        });
     }
 
     public void closeManageAccount(View v) {
