@@ -13,6 +13,7 @@
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     <LinearLayout
+        android:layout_marginTop="50dp"
         android:id="@+id/header_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -38,6 +39,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:layout_marginTop="50dp"
         android:id="@+id/header_user"
         android:visibility="gone"
         android:layout_width="match_parent"
