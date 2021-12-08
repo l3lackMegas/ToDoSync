@@ -104,7 +104,8 @@
                 android:id="@+id/btnForgetPass"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Forgot Password"
+                android:text="Register"
+                android:onClick="btnSwitchRegister"
                 android:stateListAnimator="@null"
                 android:textColor="@color/black"
                 android:backgroundTint="@color/white"/>

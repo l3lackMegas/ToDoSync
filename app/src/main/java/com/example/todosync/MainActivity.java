@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -37,6 +39,7 @@ import com.example.todosync.databinding.ActivityMainBinding;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Vector;
 
 import eltos.simpledialogfragment.color.SimpleColorDialog;
 
@@ -110,7 +113,6 @@ public class MainActivity extends AppCompatActivity {
         (new Handler()).postDelayed(()->{
             drawer.closeDrawers();
         }, 100);
-
     }
 
     public void btnRegister(View v) {
@@ -119,8 +121,31 @@ public class MainActivity extends AppCompatActivity {
         (new Handler()).postDelayed(()->{
             drawer.closeDrawers();
         }, 100);
-
     }
+
+    public void btnSwitchLogin(View v) {
+        hideSlideUp(v);
+        (new Handler()).postDelayed(()->{
+            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+            showSlideUp(v, R.layout.dialog_login);
+            (new Handler()).postDelayed(()->{
+                drawer.closeDrawers();
+            }, 100);
+        }, 300);
+    }
+
+    public void btnSwitchRegister(View v) {
+        hideSlideUp(v);
+        (new Handler()).postDelayed(()-> {
+            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+            showSlideUp(v, R.layout.dialog_register);
+            (new Handler()).postDelayed(()->{
+                drawer.closeDrawers();
+            }, 100);
+        }, 300);
+    }
+
+
 
     public boolean isLogin = false;
 
@@ -299,5 +324,10 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, (String) "Please login before upload to cloud.", Toast.LENGTH_LONG).show();
             openDrawer();
         }
+    }
+
+    public void btnOpenSetting(View v) {
+        Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
+        startActivity(intent);
     }
 }

@@ -120,7 +120,8 @@
                 android:id="@+id/btnForgetPass"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Term of Service"
+                android:text="Login"
+                android:onClick="btnSwitchLogin"
                 android:stateListAnimator="@null"
                 android:textColor="@color/black"
                 android:backgroundTint="@color/white"/>
