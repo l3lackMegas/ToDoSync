@@ -2,30 +2,25 @@ package com.example.todosync;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Gravity;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.view.animation.ScaleAnimation;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
-import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.view.GravityCompat;
@@ -36,14 +31,11 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.todosync.databinding.ActivityMainBinding;
-import com.google.android.material.navigation.NavigationBarView;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-import eltos.simpledialogfragment.SimpleDialog;
 import eltos.simpledialogfragment.color.SimpleColorDialog;
-import eltos.simpledialogfragment.color.SimpleColorWheelDialog;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -80,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
     }
 
     public void openDrawer() {
@@ -89,7 +82,8 @@ public class MainActivity extends AppCompatActivity {
 
     public static int current_page = 0;
 
-    public static void setCurrentPage(int page) {
+    public static void setCurrentPage(int page, Context context) {
+        Toast.makeText(context, (String) "asd", Toast.LENGTH_LONG);
         current_page = page;
     }
 

@@ -117,15 +117,51 @@
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_main_manu"
         app:menu="@menu/activity_main_drawer">
-        <Button
-            android:visibility="gone"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_marginTop="130dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:text="Logout"
-            android:layout_marginLeft="20dp"
-            android:layout_marginBottom="20dp"
-            android:textColor="#FF0057"
-            />
+            android:orientation="vertical">
+            <Button
+                style="?android:attr/borderlessButtonStyle"
+                android:id="@+id/btn_manage_account"
+                android:paddingVertical="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left|center_vertical"
+                android:text="Manage Account"
+                android:textColor="@color/black"
+                tools:layout_editor_absoluteX="13dp"
+                tools:layout_editor_absoluteY="153dp"
+                app:backgroundTint="@android:color/white"
+                />
+            <Button
+                style="?android:attr/borderlessButtonStyle"
+                android:id="@+id/btn_setting"
+                android:paddingVertical="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left|center_vertical"
+                android:text="Settings"
+                android:textColor="@color/black"
+                tools:layout_editor_absoluteX="13dp"
+                tools:layout_editor_absoluteY="153dp"
+                app:backgroundTint="@android:color/white"
+                />
+            <Button
+                android:visibility="gone"
+                style="?android:attr/borderlessButtonStyle"
+                android:id="@+id/btn_logout"
+                android:paddingVertical="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left|center_vertical"
+                android:text="Logout"
+                android:textColor="#FF0057"
+                tools:layout_editor_absoluteX="13dp"
+                tools:layout_editor_absoluteY="153dp"
+                app:backgroundTint="@android:color/white"
+                />
+        </LinearLayout>
     </com.google.android.material.navigation.NavigationView>
 </androidx.drawerlayout.widget.DrawerLayout>

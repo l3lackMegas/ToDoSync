@@ -98,6 +98,8 @@
                 android:background="#EAEAEA"
                 android:ems="10"
                 android:inputType="date"
+                android:hint="Tap to pick a color..."
+                android:textColorHint="@color/black"
                 android:padding="10dp"
                 android:onClick="showColorPicker"
                 android:textColor="@color/black" />
