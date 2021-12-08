@@ -5,13 +5,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
     tools:context=".ui.home.TodoTodayFragment">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
         <RelativeLayout
+            android:layout_margin="20dp"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:background="@drawable/topic_round"
@@ -37,7 +37,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Todo list"
-                    android:textSize="20dp"
+                    android:textSize="16dp"
                     android:textColor="@color/white"
                     android:textStyle="bold"/>
             </LinearLayout>
@@ -51,12 +51,493 @@
                 />
         </RelativeLayout>
         <androidx.core.widget.NestedScrollView
-            android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="10">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:minHeight="530dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Your List (5)"
+                    android:textSize="25dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"/>
+                <RelativeLayout
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:background="@drawable/dropshadow_card"
+                    android:elevation="20dp"
+                    android:outlineSpotShadowColor="@color/black">
 
+                    <ImageView
+                        android:layout_width="10dp"
+                        android:layout_height="70dp"
+                        android:background="@drawable/piority_mark"
+                        android:backgroundTint="#FF9090" />
+
+                    <LinearLayout
+                        android:paddingHorizontal="30dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_centerVertical="true"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_marginBottom="5dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Title of task"
+                            android:textSize="20dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"/>
+                        <LinearLayout
+                            android:layout_marginLeft="2dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#FF9090"
+                                android:text="Work"/>
+                            <TextView
+                                android:layout_marginLeft="20dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#696969"
+                                android:text="1 Dec"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:buttonTint="@color/black" />
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:background="@drawable/dropshadow_card"
+                    android:elevation="20dp"
+                    android:outlineSpotShadowColor="@color/black">
+
+                    <ImageView
+                        android:layout_width="10dp"
+                        android:layout_height="70dp"
+                        android:background="@drawable/piority_mark"
+                        android:backgroundTint="#FFBC6D" />
+
+                    <LinearLayout
+                        android:paddingHorizontal="30dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_centerVertical="true"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_marginBottom="5dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Title of task"
+                            android:textSize="20dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"/>
+                        <LinearLayout
+                            android:layout_marginLeft="2dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#FFBC6D"
+                                android:text="Study"/>
+                            <TextView
+                                android:layout_marginLeft="20dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#696969"
+                                android:text="1 Dec"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:buttonTint="@color/black" />
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:background="@drawable/dropshadow_card"
+                    android:elevation="20dp"
+                    android:outlineSpotShadowColor="@color/black">
+
+                    <ImageView
+                        android:layout_width="10dp"
+                        android:layout_height="70dp"
+                        android:background="@drawable/piority_mark"
+                        android:backgroundTint="#6BF468" />
+
+                    <LinearLayout
+                        android:paddingHorizontal="30dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_centerVertical="true"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_marginBottom="5dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Title of task"
+                            android:textSize="20dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"/>
+                        <LinearLayout
+                            android:layout_marginLeft="2dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#6BF468"
+                                android:text="Hoby"/>
+                            <TextView
+                                android:layout_marginLeft="20dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#696969"
+                                android:text="1 Dec"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:buttonTint="@color/black" />
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:background="@drawable/dropshadow_card"
+                    android:elevation="20dp"
+                    android:outlineSpotShadowColor="@color/black">
+
+                    <ImageView
+                        android:layout_width="10dp"
+                        android:layout_height="70dp"
+                        android:background="@drawable/piority_mark"
+                        android:backgroundTint="#6BF468" />
+
+                    <LinearLayout
+                        android:paddingHorizontal="30dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_centerVertical="true"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_marginBottom="5dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Title of task"
+                            android:textSize="20dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"/>
+                        <LinearLayout
+                            android:layout_marginLeft="2dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#6BF468"
+                                android:text="Hoby"/>
+                            <TextView
+                                android:layout_marginLeft="20dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#696969"
+                                android:text="1 Dec"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:buttonTint="@color/black" />
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:background="@drawable/dropshadow_card"
+                    android:elevation="20dp"
+                    android:outlineSpotShadowColor="@color/black">
+
+                    <ImageView
+                        android:layout_width="10dp"
+                        android:layout_height="70dp"
+                        android:background="@drawable/piority_mark"
+                        android:backgroundTint="#FF9090" />
+
+                    <LinearLayout
+                        android:paddingHorizontal="30dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_centerVertical="true"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_marginBottom="5dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Title of task"
+                            android:textSize="20dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"/>
+                        <LinearLayout
+                            android:layout_marginLeft="2dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#FF9090"
+                                android:text="Work"/>
+                            <TextView
+                                android:layout_marginLeft="20dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#696969"
+                                android:text="1 Dec"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:buttonTint="@color/black" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_marginVertical="20dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Done List (3)"
+                    android:textSize="25dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"/>
+                <RelativeLayout
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:background="@drawable/dropshadow_card"
+                    android:elevation="20dp"
+                    android:outlineSpotShadowColor="@color/black">
+
+                    <ImageView
+                        android:layout_width="10dp"
+                        android:layout_height="70dp"
+                        android:background="@drawable/piority_mark"
+                        android:backgroundTint="#ACACAC" />
+
+                    <LinearLayout
+                        android:paddingHorizontal="30dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_centerVertical="true"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_marginBottom="5dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Title of task"
+                            android:textSize="20dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"/>
+                        <LinearLayout
+                            android:layout_marginLeft="2dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#FF9090"
+                                android:text="Work"/>
+                            <TextView
+                                android:layout_marginLeft="20dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#696969"
+                                android:text="1 Dec"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:checked="true"
+                        android:buttonTint="@color/black"
+                        android:layout_alignParentRight="true"
+                        />
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:background="@drawable/dropshadow_card"
+                    android:elevation="20dp"
+                    android:outlineSpotShadowColor="@color/black">
+
+                    <ImageView
+                        android:layout_width="10dp"
+                        android:layout_height="70dp"
+                        android:background="@drawable/piority_mark"
+                        android:backgroundTint="#ACACAC" />
+
+                    <LinearLayout
+                        android:paddingHorizontal="30dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_centerVertical="true"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_marginBottom="5dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Title of task"
+                            android:textSize="20dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"/>
+                        <LinearLayout
+                            android:layout_marginLeft="2dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#FF9090"
+                                android:text="Work"/>
+                            <TextView
+                                android:layout_marginLeft="20dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#696969"
+                                android:text="1 Dec"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:checked="true"
+                        android:buttonTint="@color/black"
+                        android:layout_alignParentRight="true"
+                        />
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:background="@drawable/dropshadow_card"
+                    android:elevation="20dp"
+                    android:outlineSpotShadowColor="@color/black">
+
+                    <ImageView
+                        android:layout_width="10dp"
+                        android:layout_height="70dp"
+                        android:background="@drawable/piority_mark"
+                        android:backgroundTint="#ACACAC" />
+
+                    <LinearLayout
+                        android:paddingHorizontal="30dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_centerVertical="true"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_marginBottom="5dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Title of task"
+                            android:textSize="20dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"/>
+                        <LinearLayout
+                            android:layout_marginLeft="2dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#FF9090"
+                                android:text="Work"/>
+                            <TextView
+                                android:layout_marginLeft="20dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#696969"
+                                android:text="1 Dec"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:checked="true"
+                        android:buttonTint="@color/black"
+                        android:layout_alignParentRight="true"
+                        />
+
+                </RelativeLayout>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    />
+            </LinearLayout>
         </androidx.core.widget.NestedScrollView>
     </LinearLayout>
 </RelativeLayout>
