@@ -160,6 +160,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="left|center_vertical"
                 android:text="Help"
+                android:onClick="btnOpenHelp"
                 android:textColor="@color/black"
                 tools:layout_editor_absoluteX="13dp"
                 tools:layout_editor_absoluteY="153dp"

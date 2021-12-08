@@ -1,6 +1,8 @@
 package com.example.todosync;
 
 import android.os.Bundle;
+import android.telecom.Call;
+import android.view.View;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,6 +24,17 @@ public class SettingsActivity extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
+    }
+
+    public void closeSetting(View v) {
+        finish();
+        this.overridePendingTransition(R.anim.slidedown,R.anim.slidedown);
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
+        this.overridePendingTransition(R.anim.slidedown,R.anim.slidedown);
     }
 
     public static class SettingsFragment extends PreferenceFragmentCompat {

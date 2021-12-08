@@ -1,5 +1,6 @@
 package com.example.todosync;
 
+import android.app.ActivityOptions;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
@@ -329,5 +330,12 @@ public class MainActivity extends AppCompatActivity {
     public void btnOpenSetting(View v) {
         Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
         startActivity(intent);
+        overridePendingTransition(R.anim.slideup, R.anim.slidedown);
+    }
+
+    public void btnOpenHelp(View v) {
+        Intent intent = new Intent(MainActivity.this, HelpActivity.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slideup, R.anim.slidedown);
     }
 }
