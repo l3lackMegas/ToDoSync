@@ -196,6 +196,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void btnLogoutAction(View v) {
+        isLogin = false;
         findViewById(R.id.header_login).setVisibility(View.VISIBLE);
         findViewById(R.id.header_user).setVisibility(View.GONE);
         findViewById(R.id.btn_manage_account).setVisibility(View.GONE);
