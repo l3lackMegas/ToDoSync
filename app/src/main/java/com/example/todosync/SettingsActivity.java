@@ -1,7 +1,6 @@
 package com.example.todosync;
 
 import android.os.Bundle;
-import android.telecom.Call;
 import android.view.View;
 
 import androidx.appcompat.app.ActionBar;
@@ -28,13 +27,12 @@ public class SettingsActivity extends AppCompatActivity {
 
     public void closeSetting(View v) {
         finish();
-        this.overridePendingTransition(R.anim.slidedown,R.anim.slidedown);
     }
 
     @Override
     public void finish() {
         super.finish();
-        this.overridePendingTransition(R.anim.slidedown,R.anim.slidedown);
+        this.overridePendingTransition(R.anim.fadein,R.anim.slidedown);
     }
 
     public static class SettingsFragment extends PreferenceFragmentCompat {

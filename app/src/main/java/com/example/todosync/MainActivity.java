@@ -1,6 +1,5 @@
 package com.example.todosync;
 
-import android.app.ActivityOptions;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
@@ -17,7 +16,6 @@ import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -40,7 +38,6 @@ import com.example.todosync.databinding.ActivityMainBinding;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Vector;
 
 import eltos.simpledialogfragment.color.SimpleColorDialog;
 
@@ -327,15 +324,21 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void btnOpenManageAccount(View v) {
+        Intent intent = new Intent(MainActivity.this, ManageUserActivity.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slideup, R.anim.fadeout);
+    }
+
     public void btnOpenSetting(View v) {
         Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
         startActivity(intent);
-        overridePendingTransition(R.anim.slideup, R.anim.slidedown);
+        overridePendingTransition(R.anim.slideup, R.anim.fadeout);
     }
 
     public void btnOpenHelp(View v) {
         Intent intent = new Intent(MainActivity.this, HelpActivity.class);
         startActivity(intent);
-        overridePendingTransition(R.anim.slideup, R.anim.slidedown);
+        overridePendingTransition(R.anim.slideup, R.anim.fadeout);
     }
 }

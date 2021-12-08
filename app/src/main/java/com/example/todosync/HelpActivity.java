@@ -58,12 +58,11 @@ public class HelpActivity extends AppCompatActivity {
 
     public void closeHelp(View v) {
         finish();
-        this.overridePendingTransition(R.anim.slidedown,R.anim.slidedown);
     }
 
     @Override
     public void finish() {
         super.finish();
-        this.overridePendingTransition(R.anim.slidedown,R.anim.slidedown);
+        this.overridePendingTransition(R.anim.fadein,R.anim.slidedown);
     }
 }
