@@ -40,16 +40,36 @@
             android:orientation="vertical">
 
             <TextView
+                android:textSize="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
-                android:text="Watch tutorial from online video:" />
+                android:text="Online Video" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="230dp">
+
                 <VideoView
                     android:id="@+id/videoView"
+                    android:layout_width="match_parent"
+                    android:layout_height="230dp" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:textSize="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:text="Embed Video:" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="230dp">
+
+                <VideoView
+                    android:id="@+id/videoViewEmbed"
                     android:layout_width="match_parent"
                     android:layout_height="230dp" />
             </RelativeLayout>

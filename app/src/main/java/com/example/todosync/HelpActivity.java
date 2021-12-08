@@ -54,6 +54,17 @@ public class HelpActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+
+        VideoView videoViewEmbed = findViewById(R.id.videoViewEmbed);
+        Uri embedUri = Uri.parse("android.resource://" + getPackageName() + "/"+R.raw.footage);
+
+        MediaController embedMediaController = new MediaController(this);
+        embedMediaController.setAnchorView(videoViewEmbed);
+        videoViewEmbed.setMediaController(embedMediaController);
+        videoViewEmbed.setVideoURI(embedUri);
+        videoViewEmbed.requestFocus();
+        videoViewEmbed.start();
     }
 
     public void closeHelp(View v) {
