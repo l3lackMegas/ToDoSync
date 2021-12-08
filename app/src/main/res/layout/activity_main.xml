@@ -61,8 +61,10 @@
                 android:scaleType="fitCenter"
                 app:maxImageSize="41dp"
                 app:srcCompat="@drawable/ic_baseline_cloud_upload_24"
+                android:onClick="btnCloudAction"
                 app:tint="@color/black"
                 tools:layout_editor_absoluteX="4dp" />
+
         </androidx.appcompat.widget.Toolbar>
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -158,6 +160,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="left|center_vertical"
                 android:text="Logout"
+                android:onClick="btnLogoutAction"
                 android:textColor="#FF0057"
                 tools:layout_editor_absoluteX="13dp"
                 tools:layout_editor_absoluteY="153dp"

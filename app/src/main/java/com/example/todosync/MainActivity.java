@@ -2,11 +2,13 @@ package com.example.todosync;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
@@ -14,6 +16,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -83,17 +86,98 @@ public class MainActivity extends AppCompatActivity {
     public static int current_page = 0;
 
     public static void setCurrentPage(int page, Context context) {
-        Toast.makeText(context, (String) "asd", Toast.LENGTH_LONG);
         current_page = page;
     }
 
     public void showDialog(View btn) {
-        if(current_page == 1) {
-            showSlideUp(btn, R.layout.dialog_add_label);
-        } else {
-            showSlideUp(btn, R.layout.dialog_add_todo);
-            createAddToDoDialog();
+        switch (current_page) {
+            case 0 : {
+                showSlideUp(btn, R.layout.dialog_add_todo);
+                createAddToDoDialog();
+                break;
+            }
+
+            case 1 : {
+                showSlideUp(btn, R.layout.dialog_add_label);
+                break;
+            }
         }
+    }
+
+    public void btnLogin(View v) {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        showSlideUp(v, R.layout.dialog_login);
+        (new Handler()).postDelayed(()->{
+            drawer.closeDrawers();
+        }, 100);
+
+    }
+
+    public void btnRegister(View v) {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        showSlideUp(v, R.layout.dialog_register);
+        (new Handler()).postDelayed(()->{
+            drawer.closeDrawers();
+        }, 100);
+
+    }
+
+    public boolean isLogin = false;
+
+    public void btnLoginAction(View v) {
+        isLogin = true;
+        EditText inputEmail = (EditText) mBottomSheetDialog.findViewById(R.id.editTextLoginEmail);
+        EditText inputPass = (EditText) mBottomSheetDialog.findViewById(R.id.editTextLoginPassword);
+        if(
+            inputEmail.getText().toString().equals("user@email.com") &&
+            inputPass.getText().toString().equals("123456")
+        ) {
+            findViewById(R.id.header_login).setVisibility(View.GONE);
+            findViewById(R.id.header_user).setVisibility(View.VISIBLE);
+            findViewById(R.id.btn_manage_account).setVisibility(View.VISIBLE);
+            findViewById(R.id.btn_logout).setVisibility(View.VISIBLE);
+            Toast.makeText(MainActivity.this, (String) "Login successfully with Email " + inputEmail.getText().toString(), Toast.LENGTH_LONG).show();
+            hideSlideUp(v);
+            (new Handler()).postDelayed(()->{
+                openDrawer();
+            }, 100);
+        } else {
+            Toast.makeText(MainActivity.this, (String) "Sorry, Your email or password is incorrect", Toast.LENGTH_LONG).show();
+        }
+
+    }
+
+    public void btnRegisterAction(View v) {
+        isLogin = true;
+        EditText inputEmail = (EditText) mBottomSheetDialog.findViewById(R.id.editTextRegEmail);
+        EditText inputPass = (EditText) mBottomSheetDialog.findViewById(R.id.editTextRegPassword);
+        EditText inputRePass = (EditText) mBottomSheetDialog.findViewById(R.id.editTextRepeatPassword);
+        if(
+                !inputEmail.getText().toString().equals("") &&
+                !inputPass.getText().toString().equals("") &&
+                !inputRePass.getText().toString().equals("")
+        ) {
+            findViewById(R.id.header_login).setVisibility(View.GONE);
+            findViewById(R.id.header_user).setVisibility(View.VISIBLE);
+            findViewById(R.id.btn_manage_account).setVisibility(View.VISIBLE);
+            findViewById(R.id.btn_logout).setVisibility(View.VISIBLE);
+            Toast.makeText(MainActivity.this, (String) "Register successfully with Email " + inputEmail.getText().toString(), Toast.LENGTH_LONG).show();
+            hideSlideUp(v);
+            (new Handler()).postDelayed(()->{
+                openDrawer();
+            }, 100);
+        } else {
+            Toast.makeText(MainActivity.this, (String) "Please fill all form before register!", Toast.LENGTH_LONG).show();
+        }
+
+    }
+
+    public void btnLogoutAction(View v) {
+        findViewById(R.id.header_login).setVisibility(View.VISIBLE);
+        findViewById(R.id.header_user).setVisibility(View.GONE);
+        findViewById(R.id.btn_manage_account).setVisibility(View.GONE);
+        findViewById(R.id.btn_logout).setVisibility(View.GONE);
+        Toast.makeText(MainActivity.this, (String) "You are logged out.", Toast.LENGTH_LONG).show();
     }
 
     private void createAddToDoDialog() {
@@ -195,5 +279,25 @@ public class MainActivity extends AppCompatActivity {
             .colorPreset(0xff009688)
             .show(this, COLOR_DIALOG);
 
+    }
+
+    public void btnCloudAction(View v) {
+        if(isLogin == true) {
+            ProgressDialog progressDialog = new ProgressDialog(MainActivity.this);
+            progressDialog.setMessage("Uploading to cloud...");
+            progressDialog.setCancelable(false);
+            progressDialog.show();
+
+            (new Handler()).postDelayed(()->{
+
+                ImageButton btnCloud = (ImageButton) findViewById(R.id.btnCloud);
+                btnCloud.setImageResource(R.drawable.ic_baseline_cloud_done_24);
+                progressDialog.dismiss();
+                Toast.makeText(MainActivity.this, (String) "Your ToDoList has been backup.", Toast.LENGTH_LONG).show();
+            }, 2000);
+        } else {
+            Toast.makeText(MainActivity.this, (String) "Please login before upload to cloud.", Toast.LENGTH_LONG).show();
+            openDrawer();
+        }
     }
 }
