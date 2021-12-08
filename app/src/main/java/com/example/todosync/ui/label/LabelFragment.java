@@ -29,13 +29,7 @@ public class LabelFragment extends Fragment {
         binding = FragmentLabelBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textLabel;
-        labelViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+
         //MainActivity.setCurrentPage(1, this.getContext());
         return root;
     }

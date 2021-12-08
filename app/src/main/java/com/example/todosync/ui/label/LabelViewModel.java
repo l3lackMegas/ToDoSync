@@ -12,7 +12,6 @@ public class LabelViewModel extends ViewModel {
 
     public LabelViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is label fragment");
         MainActivity.current_page = 1;
     }
 

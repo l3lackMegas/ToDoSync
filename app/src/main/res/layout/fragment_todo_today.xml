@@ -219,7 +219,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textColor="#6BF468"
-                                android:text="Hoby"/>
+                                android:text="Hobby"/>
                             <TextView
                                 android:layout_marginLeft="20dp"
                                 android:layout_width="wrap_content"
@@ -275,7 +275,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textColor="#6BF468"
-                                android:text="Hoby"/>
+                                android:text="Hobby"/>
                             <TextView
                                 android:layout_marginLeft="20dp"
                                 android:layout_width="wrap_content"
